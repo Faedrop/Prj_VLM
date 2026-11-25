@@ -1,0 +1,30 @@
+projet:
+  nom: "Projet 7 - Petits modèles vision-langage (Option A : Légendage)"
+  seed: 42
+
+donnees:
+  dataset: "jxie/flickr8k"
+  split: "test"
+  nb_images: 500
+  taille_max_image: 512
+  dossier_images: "data/images"
+  fichier_index: "data/flickr8k_500.json"
+
+modeles:
+  - "HuggingFaceTB/SmolVLM-Instruct"
+  - "Qwen/Qwen2-VL-2B-Instruct"
+
+quantification:
+  modes:
+    - "fp16"
+    - "8bit"
+    - "4bit"
+
+generation:
+  prompt: "Describe this image clearly in one or two sentences (subject, action, background, colors)."
+  max_new_tokens: 50
+
+evaluation:
+  metrique: "rougeL"
+  fichier_resume: "results/resume_metriques.csv"
+  fichier_details: "results/details_legendes.csv"

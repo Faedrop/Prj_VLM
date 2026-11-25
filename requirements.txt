@@ -1,0 +1,7 @@
+transformers
+accelerate
+bitsandbytes
+datasets
+pillow
+evaluate
+rouge_score
